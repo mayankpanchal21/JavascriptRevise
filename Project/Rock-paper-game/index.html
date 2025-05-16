@@ -1,1 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <h1>Project 1 - Game</h1>
+    <button onclick="Playgame('Rock')">Rock</button>
+    <button onclick="Playgame('Paper')">Paper</button>
+    <button onclick="Playgame('Scissors')">Scissors</button>
+
+    <p></p>
+
+    <button onclick="reset()">Reset Score</button>
+
+    <script>
+      let displayrecord = document.body.querySelector("p");
+      let score = {
+        Win: 0,
+        Lose: 0,
+        Tie: 0,
+      };
+      displayrecord.innerText = `Win:${score.Win} Lose:${score.Lose} Tie:${score.Tie}`;
+      let result = "";
+
+      let saved = JSON.parse(localStorage.getItem("score"));
+      displayrecord.innerText = `Win:${saved.Win} Lose:${saved.Lose} Tie:${saved.Tie}`;
+      function Playgame(userMove) {
+        let computerMove = computerchoose();
+        if (computerMove === "Rock") {
+          if (userMove === "Rock") {
+            result = "Tie";
+          } else if (userMove === "Paper") {
+            result = "Win";
+          } else if (userMove === "Scissors") {
+            result = "Lose";
+          }
+        }
+
+        if (computerMove === "Paper") {
+          if (userMove === "Rock") {
+            result = "Lose";
+          } else if (userMove === "Paper") {
+            result = "Tie";
+          } else if (userMove === "Scissors") {
+            result = "Win";
+          }
+        }
+
+        if (computerMove === "Scissors") {
+          if (userMove === "Rock") {
+            result = "Win";
+          } else if (userMove === "Paper") {
+            result = "Lose";
+          } else if (userMove === "Scissors") {
+            result = "Tie";
+          }
+        }
+
+        result === "Win" && (score.Win += 1);
+        result === "Lose" && (score.Lose += 1);
+        result === "Tie" && (score.Tie += 1);
+
+        localStorage.setItem("score", JSON.stringify(score));
+        displayrecord.innerText = `Win:${score.Win} Lose:${score.Lose} Tie:${score.Tie}`;
+      }
+
+      function reset() {
+        score.Win = 0;
+        score.Lose = 0;
+        score.Tie = 0;
+
+        // Update localStorage
+        localStorage.setItem("score", JSON.stringify(score));
+
+        // Update the display
+        displayrecord.innerText = `Win:${score.Win} Lose:${score.Lose} Tie:${score.Tie}`;
+      }
+
+      function computerchoose() {
+        let random = Math.round(Math.random() * 2);
+        let choose = ["Rock", "Paper", "Scissors"];
+        return choose[random];
+      }
+    </script>
+  </body>
+</html>
 
