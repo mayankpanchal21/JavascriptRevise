@@ -16,29 +16,7 @@
         <!-- <h3></h3> -->
       </div>
     </div>
-    <script>
-      const btn = document.querySelector(".btn");
-      const res = document.querySelector(".res");
-      const p = document.querySelector("p");
-      btn.addEventListener("click", (event) => {
-        let random = Math.floor(Math.random() * 6) + 1;
-        p.textContent = random;
-        if (random === 1) {
-          let choice = document.createElement("h3").innerText =
-            "You rolled a 1";
-          res.appendChild(choice);
-        } else if (random === 2) {
-          res.textContent = "You rolled a 2";
-        } else if (random === 3) {
-          res.textContent = "You rolled a 3";
-        } else if (random === 4) {
-          res.textContent = "You rolled a 4";
-        } else if (random === 5) {
-          res.textContent = "You rolled a 5";
-        } else if (random === 6) {
-          res.textContent = "You rolled a 6";
-        }
-      });
-    </script>
+   
+    <script src= script.js></script>
   </body>
 </html>
