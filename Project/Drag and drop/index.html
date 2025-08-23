@@ -17,14 +17,31 @@
         <div id="right"></div>
     </div>
     <script>
-        const lists = document.getElementsByClassName('list');
+       const lists = document.getElementsByClassName('list');
         const left = document.getElementById('left');
         const right = document.getElementById('right');
 
         for(let list of lists){
             list.addEventListener('drag',(e)=>{
-                console.log('dragging.....')
                 let selected = e.target;
+                console.log('dragging.....')
+                console.log(e.target)
+                right.addEventListener("dragover", (event) => { 
+                    event.preventDefault();
+                })
+                right.addEventListener('drop',(e)=>{
+                    e.preventDefault();
+                    right.appendChild(selected)
+                    selected = null;
+                })
+                left.addEventListener("dragover", (event) => { 
+                    event.preventDefault();
+                })
+                left.addEventListener('drop',(e)=>{
+                    e.preventDefault();
+                    left.appendChild(selected)
+                    selected = null;
+                })
             })
         }
     </script>
