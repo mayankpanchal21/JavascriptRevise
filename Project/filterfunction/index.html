@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIlter</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 300px;
+            height: 300px;
+            display: flex;        
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>filter list</h1>
+        <input type="text" id="filterInput" placeholder="Search...">
+        <ul>
+            <li>games</li>
+            <li>workout</li>
+            <li>Entertaiment</li>
+            <li>Travelling</li>
+            <li>Book</li>
+        </ul>
+
+    </div>
+    <script>
+        let inp = document.getElementById('filterInput');
+        inp.addEventListener('keyup',()=>{
+            let filterValue = inp.value.toLowerCase();
+            let ul = document.querySelector('ul');
+            let li = ul.getElementsByTagName('li');
+            for(let i=0;i<li.length;i++){
+                let textValue = li[i].textContent || li[i].innerText;
+                if(textValue.toLowerCase().indexOf(filterValue) > -1){
+                    li[i].style.display = "";
+                }else{
+                    li[i].style.display = "none";
+                }
+            }s
+        })
+    </script>
+</body>
+</html>
