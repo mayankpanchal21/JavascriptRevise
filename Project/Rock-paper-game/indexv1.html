@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock paper</title>
+    <style>
+        .container{
+            width: 400px;
+            height: 500px;
+            border: 2px solid black;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        button{
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="div1"><img src="rock.avif" ></div>
+        <div class="div2"><img src="paper.jpg" ></div>
+        <div class="div3"><img src="scissor.png" ></div>
+        <button>rock</button>
+        <button>paper</button>
+        <button>scissor</button>
+        <h1>Result</h1>
+        <p></p>
+    </div>
+
+    <script>
+        const buttons = document.querySelectorAll("button");
+        const result = document.querySelector("p");
+        buttons.forEach((btn)=>{
+            btn.addEventListener("click",()=>{
+                const userchoice = btn.textContent;
+                const choices = ['rock', 'paper', 'scissor'];
+                const computerchoice = choices[Math.floor(Math.random()*3)];
+                if(userchoice === computerchoice){
+                    result.textContent = `It's a tie! Both chose ${userchoice}.`;
+                } else if(
+                    (userchoice === 'rock' && computerchoice === 'scissor') ||
+                    (userchoice === 'paper' && computerchoice === 'rock') ||
+                    (userchoice === 'scissor' && computerchoice === 'paper')
+                ){
+                    result.textContent = `You win! ${userchoice} beats ${computerchoice}.`;
+                } else {
+                    result.textContent = `You lose! ${computerchoice} beats ${userchoice}.`;
+                }
+            })
+        })
+    </script>
+</body>
+</html>
