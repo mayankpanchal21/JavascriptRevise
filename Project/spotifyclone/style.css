@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+     font-family: "Bitcount Grid Double", system-ui;
 }
 
 body{
-    background-color: antiquewhite;
+    background-color: rgb(106, 102, 97);
 }
 
 nav{
@@ -16,13 +19,14 @@ nav{
 nav ul{
     display: flex;
     padding: 4px;
-    justify-content: space-between  ;
+    /* justify-content: space-between  ; */
     align-items: center;
 }
 .brand{
     display: flex;;
     align-items: center;
     gap: 5px;
+    font-size: larger;
 }
 
 ul li{
@@ -36,7 +40,68 @@ ul li img{
 .container{
     color: white;
     background-image: url('bg.jpg');
-    height: 100vh;
+    min-height: 70vh;
+    width: 70vw;
+    margin: 20px auto;
     background-position: center;
     background-size: cover;
+    border-radius: 30px;
+}
+.container h1{
+   position: relative;
+    top: 5%;
+    left: 2%;
+}
+.bottom{
+    background-color: black;
+    height: 18vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.bottom input{
+    width: 80%;
+}
+.bottom .icons{
+    
+}
+.songlist{
+    margin: 23px;
+    border: 2px solid white;
+    height: 60vh;
+    width: 30%;
+    border-radius: 30px;
+    color: black;
+}
+.songitem{
+    /* background-color: white; */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 7px 23px;
+}
+.songitem:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+.songitem img{
+    width: 40px;
+    border-radius: 50%;
+}
+
+.songinfo{
+    color: white;
+    position: absolute;
+    left: 10%;
+    margin-top: 20px;
+    font-family: cursive;
+}
+.songinfo img{
+    width: 40px;
+    margin-right: 5px;
 }
