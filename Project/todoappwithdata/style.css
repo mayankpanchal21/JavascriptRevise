@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.todo{
+    width: 300px;
+    height: 400px;
+    border: 2px solid black;
+}
+.todo h1{
+    text-align: center;
+    margin: 14px 0px;
+}
+.srch{
+    /* border: 2px solid brown; */
+    display: flex;
+    justify-content: center;
+}
+.srch i{
+    margin-top: 22px;
+    margin-left: 10px;
+}
+.srch input{
+    width: 200px;
+    padding: 8px;
+    height: 50px;
+}
+.list{
+    padding: 15px;
+    /* border: 2px solid brown; */
+}
+.list ul{
+    list-style-type: none;
+}
