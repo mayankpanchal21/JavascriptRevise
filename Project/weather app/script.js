@@ -22,5 +22,4 @@ async function data(){
     document.getElementById('hum').innerText = data2.current.humidity;
     document.getElementById('win').innerText =  Math.round(data2.current.wind_kph);
 }
-
 data();
