@@ -4,7 +4,6 @@ var city = "meerut";
 const apiurl = `http://api.weatherapi.com/v1/current.json?key=${api}`;
 // console.log(apiurl);
 const inp = document.querySelector('input');
-
 // inp.addEventListener('keyup',(e)=>{
 //     if(e.key == 'Enter'){
 //         data(e.target.value); 
